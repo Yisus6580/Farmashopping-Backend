@@ -18,3 +18,26 @@ export const getAll = async (req: Request, res: Response) => {
     return sendResponse(res, 500, error.message);
   }
 };
+
+// Listar
+export const getByIdentifier = async (req: Request, res: Response) => {
+  try {
+    // Extraemos el id de los parametros
+    const { numberDocument } = req.params;
+
+    const item = await await axios.get(
+      `http://omnidata.click:1356/api/FARMAREST/v1/ventas/0/${numberDocument}`
+    );
+
+    // Verificamos si encontró el documento
+    if (!item) {
+      return sendResponse(res, 404, 'Not Found');
+    }
+
+    // Mandamos la respuesta con la data
+    sendResponse<IOrder>(res, 200, 'Success', item.data);
+  } catch (error: any) {
+    // Mandamos el error capturado
+    sendResponse(res, 500, error.message);
+  }
+};
