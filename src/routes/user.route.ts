@@ -18,7 +18,7 @@ const route = Router();
 route.get('/', verifyToken, getAll);
 route.get('/list/:id', verifyToken, getByIdentifier);
 route.patch('/updateState/:id', verifyToken, updateState);
-route.post('/create', upload.single('image'), create);
+route.post('/create', verifyToken, upload.single('image'), create);
 route.put('/update/:id', verifyToken, upload.single('image'), update);
 route.post('/login', login);
 route.post('/sendEMail', sendEmail);

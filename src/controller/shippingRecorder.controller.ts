@@ -30,7 +30,10 @@ export const getByIdentifier = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     // Documento obtenido por el id desde la db
-    const item = await IShippingRecorderModel.findById(id);
+    const item = await IShippingRecorderModel.findById(id).populate({
+      path: 'user',
+      select: 'name lastName userName email role',
+    });
 
     // Verificamos si encontró el documento
     if (!item) {

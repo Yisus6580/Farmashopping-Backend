@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Request, Response } from 'express';
-import { IOrder } from '../interfaces/consults';
 import sendResponse from '../utils/sendResponse';
+import { IOrder } from '../interfaces/consults';
 
 // Listar
 export const getAll = async (req: Request, res: Response) => {

@@ -1,8 +1,8 @@
 export interface IDataHome {
-  ordersToday: string;
-  totalNotesSalesRegisters: string;
-  totalSendsRegisters: string;
-  totalUsers: string;
+  ordersToday: number;
+  totalNotesSalesRegisters: number;
+  totalSendsRegisters: number;
+  totalUsers: number;
 }
 
 export interface IOrder {
