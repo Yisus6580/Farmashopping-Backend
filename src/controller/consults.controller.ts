@@ -11,8 +11,8 @@ import moment from 'moment-timezone';
 // Listar
 export const getAll = async (req: Request, res: Response) => {
   const date = moment().tz('America/La_Paz');
-  console.log(date);
-  const formattedDate = date.format('yyyy-MM-dd');
+  const formattedDate = date.format('yyyy-MM-DD');
+  console.log(formattedDate);
 
   try {
     // Extraemos el id de los parametros
