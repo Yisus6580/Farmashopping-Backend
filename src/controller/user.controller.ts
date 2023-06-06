@@ -304,7 +304,7 @@ export const sendEmail = async (req: Request, res: Response) => {
         from: 'nonameggg000@gmail.com',
         to: data.email,
         subject: 'Restablecimiento de contraseña',
-        text: `Hola, para restablecer tu contraseña en el Sistema Web de Farmashopping, haz clic en el siguiente enlace http://localhost:5173/restablecer-password/${item._id}/${setUserToken.verifyToken}. Este enlace estará disponible por 30 minutos.`,
+        text: `Hola, para restablecer tu contraseña en el Sistema Web de Farmashopping, haz clic en el siguiente enlace https://farmashopping-almacen.netlify.app/restablecer-password/${item._id}/${setUserToken.verifyToken}. Este enlace estará disponible por 30 minutos.`,
       };
 
       transporter.sendMail(mailOptions, (error) => {
